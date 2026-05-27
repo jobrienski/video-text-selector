@@ -1,4 +1,4 @@
-import { handleVideoClick } from "./lifecycle";
+import { cancelCurrentMode, handleVideoClick } from "./lifecycle";
 import { showToast } from "./drm";
 
 console.log("[svt-content] loaded on", location.href);
@@ -50,3 +50,15 @@ document.addEventListener("mousedown", swallow, true);
 document.addEventListener("mouseup", swallow, true);
 document.addEventListener("click", swallow, true);
 document.addEventListener("dblclick", swallow, true);
+
+// Escape cancels any active extension mode (capturing, OCRing, lifted, fading).
+// Installed once at module init so it works even during the pre-mount phases —
+// the previous handler only fired after the patch was already on screen.
+document.addEventListener(
+  "keydown",
+  (e) => {
+    if (e.key !== "Escape") return;
+    cancelCurrentMode();
+  },
+  true,
+);

@@ -21,6 +21,15 @@ type State =
 
 let state: State = { kind: "idle" };
 
+// Global Escape handler — works in any state (capturing, ocring, lifted, fading).
+// Installed once from the content entry. Calls into cancelInflight so the
+// behavior is uniform regardless of where in the lifecycle we are.
+export function cancelCurrentMode(): boolean {
+  if (state.kind === "idle" || state.kind === "fading") return false;
+  cancelInflight();
+  return true;
+}
+
 function cancelInflight(): void {
   if (state.kind === "capturing" || state.kind === "ocring") {
     state.cancelToken.cancelled = true;
@@ -104,17 +113,12 @@ function installLifted(mounted: MountedPatch): void {
     if (mounted.host.contains(e.target)) return;
     beginFade();
   };
-  const onKey = (e: KeyboardEvent) => {
-    if (e.key === "Escape") beginFade();
-  };
   document.addEventListener("copy", onCopy, true);
   document.addEventListener("pointerdown", onPointerDown, true);
-  document.addEventListener("keydown", onKey, true);
 
   const teardown = () => {
     document.removeEventListener("copy", onCopy, true);
     document.removeEventListener("pointerdown", onPointerDown, true);
-    document.removeEventListener("keydown", onKey, true);
   };
 
   state = { kind: "lifted", mounted, teardown };

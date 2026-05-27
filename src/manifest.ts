@@ -5,7 +5,7 @@ export default defineManifest({
   name: "Video Text Selector",
   version: "0.1.0",
   description:
-    "Select and copy text from non-DRM HTML5 videos. Cmd-click (Mac) or Ctrl-click (Win/Linux) on text in any playing video to lift a selectable text card.",
+    "Cmd/Ctrl-click text inside any playing video to make it selectable and copyable, just like text on a webpage.",
   homepage_url: "https://github.com/jobrienski/video-text-selector",
   icons: {
     16: "icons/icon16.png",
