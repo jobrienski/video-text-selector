@@ -1,12 +1,22 @@
 {
   "name": "vid-text-select-plugin",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Chromium extension: select and copy text from non-DRM HTML5 videos via Cmd-click (Mac) or Ctrl-click (Win/Linux).",
+  "homepage": "https://github.com/jobrienski/video-text-selector",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobrienski/video-text-selector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jobrienski/video-text-selector/issues"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate-icons": "node scripts/generate-icons.mjs",
+    "package": "npm run build && node scripts/package.mjs"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +24,10 @@
   "type": "module",
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.4.0",
+    "@types/archiver": "^7.0.0",
     "@types/chrome": "^0.1.42",
+    "archiver": "^7.0.1",
+    "sharp": "^0.34.5",
     "typescript": "^5.9.3",
     "vite": "^5.4.21"
   },

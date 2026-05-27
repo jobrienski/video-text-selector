@@ -2,9 +2,16 @@ import { defineManifest } from "@crxjs/vite-plugin";
 
 export default defineManifest({
   manifest_version: 3,
-  name: "Selectable Video Text",
+  name: "Video Text Selector",
   version: "0.1.0",
-  description: "cmd-click text in a playing video to select and copy it.",
+  description:
+    "Select and copy text from non-DRM HTML5 videos. Cmd-click (Mac) or Ctrl-click (Win/Linux) on text in any playing video to lift a selectable text card.",
+  homepage_url: "https://github.com/jobrienski/video-text-selector",
+  icons: {
+    16: "icons/icon16.png",
+    48: "icons/icon48.png",
+    128: "icons/icon128.png",
+  },
   permissions: ["tabs", "activeTab", "offscreen"],
   host_permissions: ["<all_urls>"],
   content_security_policy: {
