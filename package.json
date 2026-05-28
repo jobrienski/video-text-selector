@@ -1,6 +1,6 @@
 {
   "name": "vid-text-select-plugin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Chromium extension: select and copy text from non-DRM HTML5 videos via Cmd-click (Mac) or Ctrl-click (Win/Linux).",
   "homepage": "https://github.com/jobrienski/video-text-selector",
   "repository": {
