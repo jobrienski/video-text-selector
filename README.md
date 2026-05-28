@@ -2,7 +2,7 @@
 
 A Chromium browser extension that lets you select and copy text shown inside an HTML5 video — chyrons, captions burned into the picture, slide text, on-screen quotes — without pausing playback.
 
-Click on a word in the video while holding the platform modifier — **⌘ Cmd on macOS, Ctrl on Windows and Linux**. The extension captures the current frame, OCRs the text around the click, and pops up a small "lifted" card containing a selectable, copyable text layer over the original pixels. The video keeps playing behind it. Drag-select, then ⌘-C (Mac) or Ctrl-C (Win/Linux), done.
+Click on a word in the video while holding the platform modifier — **⌘ Cmd-click on macOS, Ctrl-click on Windows and Linux**. The extension captures the current frame, OCRs the text around the click, and pops up a small "lifted" card containing a selectable, copyable text layer over the original pixels. The video keeps playing behind it. Drag-select, then ⌘-C (Mac) or Ctrl-C (Win/Linux), done.
 
 > On macOS, Ctrl-click is the system right-click gesture — the extension intentionally ignores it so the native context menu still works.
 
