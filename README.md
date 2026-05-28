@@ -44,7 +44,7 @@ Click on a word in the video while holding the platform modifier — **⌘ Cmd o
 Requires Node 20+ and npm. The project assumes a recent Node (developed against Node 22 via Volta).
 
 ```sh
-git clone https://github.com/<you>/video-text-selector.git
+git clone https://github.com/jobrienski/video-text-selector
 cd video-text-selector
 npm install
 npm run build
